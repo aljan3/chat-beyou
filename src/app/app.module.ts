@@ -8,12 +8,12 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthenticationService} from './services/authentication.service';
+import { AuthenticationService} from 'src/Services/authentication.service';
 @NgModule({
   declarations: [
     AppComponent,
     InscriptionComponent,
-    ConnexionComponent
+
   ],
   imports: [
     BrowserModule,

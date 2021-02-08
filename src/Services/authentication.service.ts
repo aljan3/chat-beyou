@@ -10,7 +10,7 @@ export class AuthenticationService{
     }
 
 
-   login(user:any)
+   login(user)
   {
     return this.http.post(this.host+"/Connexion",user,{observe : 'response'}) ;
   }
