@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
-@Injectable( )
+import { HttpClient , HttpHeaders , HttpResponse} from '@angular/common/http';
+import {Observable} from "rxjs" ;
+@Injectable()
 
 export class AuthenticationService{
     private host:string="http://localhost:8080";
@@ -12,7 +13,7 @@ export class AuthenticationService{
 
    login(user)
   {
-    return this.http.post(this.host+"/Connexion",user,{observe : 'response'}) ;
+    return this.http.post(this.host+"/login",user,{observe : 'response'}) ;
   }
 
 }

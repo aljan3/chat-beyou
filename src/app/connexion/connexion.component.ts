@@ -13,15 +13,19 @@ export class ConnexionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  login(user)
+  onLogin(user)
   {
       this.authService.login(user)
       .subscribe(
           resp => {
             let jwt = resp.headers.get('authorization');
             console.log(jwt);
+            console.log("success");
+            this.mode=2 ;
           } ,
           err => {
+           console.log("hi");
+           console.log(user);
             this.mode = 1;
           }
       )

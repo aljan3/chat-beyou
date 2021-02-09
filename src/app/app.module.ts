@@ -13,6 +13,7 @@ import { AuthenticationService} from 'src/Services/authentication.service';
   declarations: [
     AppComponent,
     InscriptionComponent,
+    ConnexionComponent
 
   ],
   imports: [
