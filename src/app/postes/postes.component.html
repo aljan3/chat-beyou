@@ -1,0 +1,8 @@
+<p>postes works!</p>
+<div *ngIf="postes">
+
+  <p *ngFor="let p of postes._embedded.postes">
+    {{p.contenu}}
+  </p>
+
+</div>

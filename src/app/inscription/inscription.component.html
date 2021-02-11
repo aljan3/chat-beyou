@@ -1,26 +1,49 @@
-<div class="container">
-<form>
-  <button type="button"  routerLink="/Connexion" class="btn btn-primary">Connexion </button>
-  <div class="form-group">
-    <label for="exampleInputNom">Nom</label>
-    <input type="text" class="form-control" id="nom" aria-describedby="nom" placeholder="enter nom ">
+<div class="signup-form">
+<form ngNativeValidate (ngSubmit)="saveUser()">
 
-  </div>
-  <div class="form-group">
-    <label>Prenom</label>
-    <input type="text" class="form-control" id="prenom" aria-describedby="prenom" placeholder="enter prenom ">
 
-  </div>
-  <div class="form-group">
-    <label>Age</label>
-    <input type="text" class="form-control" id="age" aria-describedby="age" placeholder="Enter age">
 
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
+    <h2>Register</h2>
+    <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+    <div class="form-group">
+      <div class="form-group">
+        <input  [(ngModel)]="UserForm.username" type="text" class="form-control" name="username" placeholder="username" required="required">
+      </div>
+      <div class="form-group">
+        <input [(ngModel)]="UserForm.nom" type="text" class="form-control" name="nom" placeholder="First Name" required="required">
+      </div>
+      <div class="form-group">
+        <input  [(ngModel)]="UserForm.prenom" type="text" class="form-control" name="prenom" placeholder="Last Name" required="required">
+      </div>
+      <div class="form-group">
+        <input [(ngModel)]="UserForm.sexe" type="text" class="form-control" name="sexe" placeholder="sexe" required="required">
+      </div>
+      <div class="form-group">
+        <input  [(ngModel)]="UserForm.age" type="text" class="form-control" name="age" placeholder="age" required="required">
+      </div>
+      <div class="form-group">
+        <input  [(ngModel)]="UserForm.email" type="email" class="form-control" name="email" placeholder="Email" required="required">
+      </div>
+      <div class="form-group">
+        <input [(ngModel)]="UserForm.password" type="password" class="form-control" name="password" placeholder="Password" required="required">
+      </div>
+      <div class="form-group">
+        <input  [(ngModel)]="UserForm.repassword" type="password" class="form-control" name="repassword" placeholder="Confirm Password" required="required">
+      </div>
+      <div class="form-group">
+        <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+      </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</div>
+    </div>
+    </form>
+    <div class="text-center">Already have an account? <a  routerLink="/Connexion" >Sign in</a></div>
+    <div class="alert alert-info" *ngIf="mode==1">
+      <strong>Congrats !</strong> You had join us !
+    </div>
+
+
+    </div>
+
