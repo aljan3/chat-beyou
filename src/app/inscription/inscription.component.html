@@ -1,5 +1,5 @@
-<div class="signup-form">
-<form ngNativeValidate (ngSubmit)="saveUser()">
+<div class="signup-form" id="form">
+<form ngNativeValidate     (ngSubmit)="sendEmail()" onsubmit="send();">
 
 
 
@@ -34,6 +34,9 @@
         <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
       </div>
       <div class="form-group">
+        <input  [(ngModel)]="codeInscription" type="hidden" class="form-control" name="codeInscription"  >
+      </div>
+      <div class="form-group">
         <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
       </div>
 
@@ -43,7 +46,15 @@
     <div class="alert alert-info" *ngIf="mode==1">
       <strong>Congrats !</strong> You had join us !
     </div>
+    <div class="alert alert-info" *ngIf="confirm==1">
+    <strong>Check your email to confirm your subscription  !</strong>
+     </div>
+</div>
+<div id="confirm">
+  <div class="message">This is a warning message.</div>
+  <button class="yes">OK</button>
+</div>
 
 
-    </div>
+
 

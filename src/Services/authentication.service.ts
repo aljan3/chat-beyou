@@ -5,12 +5,15 @@ import {Observable} from "rxjs" ;
 import { User } from 'src/model/model.user' ;
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { feedback } from 'src/model/model.feedback' ;
 
 @Injectable()
 
 export class AuthenticationService{
     private host:string="http://localhost:8080";
     private jwtToken ;
+    private message  ;
+    public roles;
     constructor (private http:HttpClient){
 
     }
@@ -31,6 +34,9 @@ export class AuthenticationService{
   saveToken(jwt)
   {
     localStorage.setItem('token', jwt);
+    //let jwtHelper = new JwtHelper();
+    //this.roles = jwtHelper.decodeToken(this.jwtToken).roles;
+
   }
 
   loadToken()
@@ -44,10 +50,10 @@ export class AuthenticationService{
     if(this.jwtToken==null)
          this.loadToken() ;
     return this.http.get(this.host+"/postes",{ headers : new HttpHeaders({ 'authorization' : this.jwtToken}) } ) ;
-    }
-  sendEmail()
+   }
+  sendEmail(Email:feedback)
   {
-
+    return this.http.post(this.host+"/feedback",Email);
   }
 
 

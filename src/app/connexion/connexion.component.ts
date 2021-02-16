@@ -24,6 +24,7 @@ export class ConnexionComponent implements OnInit {
           resp => {
             let jwt = resp.headers.get('authorization');
              this.authService.saveToken(jwt);
+             console.log("hadi resp "  + resp) ;
 
             this.mode=2 ;
                   this.router.navigateByUrl("/postes");
@@ -31,11 +32,15 @@ export class ConnexionComponent implements OnInit {
 
           } ,
           err => {
-           console.log("hi");
-           console.log(user);
+            console.log(err) ;
             this.mode = 1;
           }
       )
+  }
+  catchError()
+  {
+
+
   }
 
 }

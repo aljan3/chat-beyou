@@ -10,12 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationService} from 'src/Services/authentication.service';
 import { PostesComponent } from './postes/postes.component';
+import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     InscriptionComponent,
     ConnexionComponent,
-    PostesComponent
+    PostesComponent,
+    ConfirmemailComponent
 
   ],
   imports: [
