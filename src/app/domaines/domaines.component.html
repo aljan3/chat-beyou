@@ -1,0 +1,8 @@
+
+<div *ngIf="domaines">
+
+<select >
+          <option value="">- select a domain-</option>
+          <option value="{{d.domaineName}}" *ngFor="let d of domaines._embedded.domaines" >{{d.domaineName}}</option>
+</select>
+</div>

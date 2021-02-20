@@ -11,14 +11,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationService} from 'src/Services/authentication.service';
 import { PostesComponent } from './postes/postes.component';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
+import { HeaderComponent } from './header/header.component';
+import { InscriptionAbonneComponent} from './inscription-abonne/inscription-abonne.component';
+import { DomainesComponent } from './domaines/domaines.component' ;
+
 
 @NgModule({
+
+
   declarations: [
     AppComponent,
     InscriptionComponent,
     ConnexionComponent,
     PostesComponent,
-    ConfirmemailComponent
+    ConfirmemailComponent,
+    HeaderComponent,
+    InscriptionAbonneComponent,
+    DomainesComponent
+
+
 
   ],
   imports: [

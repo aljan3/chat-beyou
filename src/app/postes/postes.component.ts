@@ -14,7 +14,7 @@ import { Router } from '@angular/router' ;
 })
 export class PostesComponent implements OnInit {
 
-   public postes;
+  public postes;
 
   constructor( private authService : AuthenticationService , private router:Router) { }
 

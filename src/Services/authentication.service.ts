@@ -55,6 +55,18 @@ export class AuthenticationService{
   {
     return this.http.post(this.host+"/feedback",Email);
   }
+  getPays()
+  {
+    if(this.jwtToken==null)
+             this.loadToken() ;
+        return this.http.get(this.host+"/payses",{ headers : new HttpHeaders({ 'authorization' : this.jwtToken}) } ) ;
+
+  }
+  getDomaines()
+  {     if(this.jwtToken==null)
+                  this.loadToken() ;
+        return this.http.get(this.host+"/domaines",{ headers : new HttpHeaders({ 'authorization' : this.jwtToken}) } ) ;
+  }
 
 
 }

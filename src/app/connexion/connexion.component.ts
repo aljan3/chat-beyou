@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService} from 'src/Services/authentication.service';
-
+import { HttpErrorResponse} from '@angular/common/http'
 @Component({
   selector: 'app-connexion',
   templateUrl: './connexion.component.html',
@@ -32,7 +32,7 @@ export class ConnexionComponent implements OnInit {
 
           } ,
           err => {
-            console.log(err) ;
+
             this.mode = 1;
           }
       )

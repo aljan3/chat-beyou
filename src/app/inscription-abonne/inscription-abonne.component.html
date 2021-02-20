@@ -1,0 +1,92 @@
+
+
+
+<div class="signup-form" id="form">
+  <div class="user" >
+    <form ngNativeValidate     (ngSubmit)="sendEmail()" onsubmit="send();"  >
+
+
+
+      <h2>Register</h2>
+      <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+      <div class="form-group">
+        <div class="form-group">
+          <input  [(ngModel)]="UserForm.username" type="text" class="form-control" name="username" placeholder="username" required="required">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="UserForm.nom" type="text" class="form-control" name="nom" placeholder="First Name" required="required">
+        </div>
+        <div class="form-group">
+          <input  [(ngModel)]="UserForm.prenom" type="text" class="form-control" name="prenom" placeholder="Last Name" required="required">
+        </div>
+
+        <div class="form-group">
+          <select  class="form-control"  >
+            <option  style="color:red" >  Votre sexe </option>
+            <option value="femme" [(ngModel)]="UserForm.sexe">femme </option>
+            <option value="homme" [(ngModel)]="UserForm.sexe">homme </option>
+            <option value="Autre" [(ngModel)]="UserForm.sexe">Autre </option>
+
+
+          </select>
+        </div>
+        <div class="form-group">
+          <input  [(ngModel)]="UserForm.age" type="text" class="form-control" name="age" placeholder="age" required="required">
+        </div>
+        <div class="form-group">
+          <input  [(ngModel)]="UserForm.appUserDetails.justificatif" type="text" class="form-control" name="justificatif" placeholder="justificatif" required="required">
+        </div>
+
+        <div class="form-group">
+          <input  [(ngModel)]="UserForm.email" type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="UserForm.password" type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+
+        <div [(ngModel)]="UserForm.appUserDetails"  class="form-group" *ngIf="domaines">
+
+          <select  class="form-control" >
+            <option value="">- select a domain-</option>
+            <option value="{{d.domaineName}}" *ngFor="let d of domaines._embedded.domaines" >{{d.domaineName}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <input  [(ngModel)]="UserForm.repassword" type="password" class="form-control" name="repassword" placeholder="Confirm Password" required="required">
+        </div>
+        <div class="form-group">
+          <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+        </div>
+
+        <div class="form-group">
+          <input  [(ngModel)]="UserForm.repassword" type="password" class="form-control" name="repassword" placeholder="Confirm Password" required="required">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+        </div>
+
+      </div>
+    </form>
+    <div class="text-center">Already have an account? <a  routerLink="/Connexion" >Sign in</a></div>
+    <div class="alert alert-info" *ngIf="mode==1">
+      <strong>Congrats !</strong> You had join us !
+    </div>
+    <div class="alert alert-info" *ngIf="confirm==1">
+      <strong>Check your email to confirm your subscription  !</strong>
+    </div>
+  </div>
+  <div id="confirm">
+    <div class="message">This is a warning message.</div>
+    <button class="yes">OK</button>
+  </div>
+  <p *ngFor="let d  of domaines._embedded.domaines">
+    {{d.domaine}}
+  </p>
+
+
+</div>
+
+
+
+

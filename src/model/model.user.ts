@@ -11,6 +11,8 @@ export class User {
      password:string="" ;
      repassword:string="";
      codeInscription:string="";
+     pays : string = "" ;
+     ville : string = "" ;
      appUserDetails:UserDetails = new UserDetails();
 
 
