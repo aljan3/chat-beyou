@@ -1,4 +1,6 @@
 import { UserDetails } from 'src/model/userDetails' ;
+import { Domaine } from 'src/model/module.domaine' ;
+
 
 export class User {
      nom:string="";
@@ -14,6 +16,8 @@ export class User {
      pays : string = "" ;
      ville : string = "" ;
      appUserDetails:UserDetails = new UserDetails();
+     domaineName:string = "";
+     specialiteName:string ="";
 
 
 }

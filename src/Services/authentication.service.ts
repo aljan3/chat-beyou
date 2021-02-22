@@ -26,11 +26,18 @@ export class AuthenticationService{
 
   }
   saveUser(UserForm:User)
-  {
-     let headers = new HttpHeaders();
-     //headers.append('Authorization',this.jwtToken);
-    return this.http.post(this.host+"/register",UserForm);
-  }
+    {
+       let headers = new HttpHeaders();
+       //headers.append('Authorization',this.jwtToken);
+      return this.http.post(this.host+"/register",UserForm);
+    }
+    //abonne
+    saveUserAbonne(UserForm:User)
+        {
+           let headers = new HttpHeaders();
+           //headers.append('Authorization',this.jwtToken);
+          return this.http.post(this.host+"/registerAbonne",UserForm);
+        }
   saveToken(jwt)
   {
     localStorage.setItem('token', jwt);
@@ -68,5 +75,11 @@ export class AuthenticationService{
         return this.http.get(this.host+"/domaines",{ headers : new HttpHeaders({ 'authorization' : this.jwtToken}) } ) ;
   }
 
+
+  getSpecialites()
+  {     if(this.jwtToken==null)
+                  this.loadToken() ;
+        return this.http.get(this.host+"/specialites",{ headers : new HttpHeaders({ 'authorization' : this.jwtToken}) } ) ;
+  }
 
 }

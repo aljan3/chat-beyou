@@ -21,15 +21,15 @@
         </div>
 
         <div class="form-group">
-          <select  class="form-control"  >
-            <option  style="color:red" >  Votre sexe </option>
-            <option value="femme" [(ngModel)]="UserForm.sexe">femme </option>
-            <option value="homme" [(ngModel)]="UserForm.sexe">homme </option>
-            <option value="Autre" [(ngModel)]="UserForm.sexe">Autre </option>
-
-
+          <label> Chosir votre sexe : </label>
+          <select  class="form-control" name="sexe"  [(ngModel)]="UserForm.sexe"   >
+            <option name="sexe"  style="color:red" >  Votre sexe </option>
+            <option name="sexe" value="femme" >femme </option>
+            <option name="sexe" value="homme" >homme </option>
+            <option  name="sexe" value="Autre" >Autre </option>
           </select>
         </div>
+
         <div class="form-group">
           <input  [(ngModel)]="UserForm.age" type="text" class="form-control" name="age" placeholder="age" required="required">
         </div>
@@ -43,25 +43,33 @@
         <div class="form-group">
           <input [(ngModel)]="UserForm.password" type="password" class="form-control" name="password" placeholder="Password" required="required">
         </div>
+        <div class="form-group">
+          <input [(ngModel)]="UserForm.repassword" type="password" class="form-control" name="repassword" placeholder="repassword" required="required">
+        </div>
 
-        <div [(ngModel)]="UserForm.appUserDetails"  class="form-group" *ngIf="domaines">
+        <div  class="form-group" *ngIf="domaines">
+        <label> Choisir votre domaine : </label>
+          <select [(ngModel)]="UserForm.domaineName" name="domaineName"  class="form-control"  >
+            <option>Choisissez votre domaine</option>
+            <option name="domaineName" value="{{d.domaineName}}" *ngFor="let d of domaines._embedded.domaines"  >{{d.domaineName}}</option>
+          </select>
+        </div>
+        <label> Choisir votre spécialité: </label>
 
-          <select  class="form-control" >
-            <option value="">- select a domain-</option>
-            <option value="{{d.domaineName}}" *ngFor="let d of domaines._embedded.domaines" >{{d.domaineName}}</option>
+        <div  class="form-group" *ngIf="specialites">
+
+          <select [(ngModel)]="UserForm.specialiteName" name="specialiteName"  class="form-control"  >
+            <option>Choisissez votre spécialité</option>
+            <option name="specialiteName" value="{{s.specialiteName}}" *ngFor="let s of specialites._embedded.specialites"  >{{s.specialiteName}}</option>
           </select>
         </div>
 
-        <div class="form-group">
-          <input  [(ngModel)]="UserForm.repassword" type="password" class="form-control" name="repassword" placeholder="Confirm Password" required="required">
-        </div>
+
         <div class="form-group">
           <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
         </div>
 
-        <div class="form-group">
-          <input  [(ngModel)]="UserForm.repassword" type="password" class="form-control" name="repassword" placeholder="Confirm Password" required="required">
-        </div>
+
         <div class="form-group">
           <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
         </div>
@@ -80,9 +88,7 @@
     <div class="message">This is a warning message.</div>
     <button class="yes">OK</button>
   </div>
-  <p *ngFor="let d  of domaines._embedded.domaines">
-    {{d.domaine}}
-  </p>
+
 
 
 </div>

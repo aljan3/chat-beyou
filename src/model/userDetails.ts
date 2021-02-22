@@ -8,7 +8,5 @@ export class UserDetails {
      horaire : string ="";
      biographie : string="" ;
      localisation : string="" ;
-     domaine: Domaine = new Domaine();
-     specialite: Specialite = new Specialite();
 
 }

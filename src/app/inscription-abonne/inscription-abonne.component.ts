@@ -4,6 +4,7 @@ import { User } from 'src/model/model.user' ;
 import { feedback } from 'src/model/model.feedback' ;
 import { UserDetails } from 'src/model/userDetails' ;
 import { Router } from '@angular/router' ;
+import { Domaine } from  'src/model/module.domaine' ;
 
 
 @Component({
@@ -12,13 +13,15 @@ import { Router } from '@angular/router' ;
   styleUrls: ['./inscription-abonne.component.css']
 })
 export class InscriptionAbonneComponent implements OnInit {
-UserForm:User = new User();
+  UserForm:User = new User();
   UserFormDetails : UserDetails = new UserDetails() ;
+  //UserDomaine : Domaine = new Domaine() ;
   mode : number = 0 ;
   confirm : number = 0 ;
   codeInscription ;
   public pays ;
   public domaines ;
+  public specialites;
 
   constructor(private authService:AuthenticationService, private router:Router) { }
 
@@ -31,17 +34,30 @@ UserForm:User = new User();
           console.log(err);
           this.router.navigateByUrl("/Connexion");
         });
+
+        //specialites
+        this.authService. getSpecialites()
+                .subscribe(data=>{
+                this.specialites =data ;
+
+                }, err=>{
+                  console.log(err);
+                  this.router.navigateByUrl("/Connexion");
+                });
       }
 
 
 
   saveUser()
-    {
-        this.UserFormDetails.justificatif= this.UserForm.appUserDetails.justificatif ;
-        this.UserForm.appUserDetails = this.UserFormDetails ;
+    {   /*this.UserDomaine.domaineName= this.UserForm.appUserDetails.domaine.domaineName ;*/
+        /*this.UserFormDetails.justificatif= this.UserForm.appUserDetails.justificatif ;*/
+       /* this.UserForm.appUserDetails = this.UserFormDetails ;*/
+      /*  this.UserForm.appUserDetails.domaine=   this.UserDomaine ;*/
+             // this.UserFormDetails.justificatif= this.UserForm.appUserDetails.justificatif ;
+             // this.UserForm.appUserDetails = this.UserFormDetails ;
 
 
-        this.authService.saveUser(this.UserForm)
+        this.authService.saveUserAbonne(this.UserForm)
        .subscribe(
               data => {
                console.log(data)
