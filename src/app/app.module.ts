@@ -13,7 +13,9 @@ import { PostesComponent } from './postes/postes.component';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { HeaderComponent } from './header/header.component';
 import { InscriptionAbonneComponent} from './inscription-abonne/inscription-abonne.component';
-import { DomainesComponent } from './domaines/domaines.component' ;
+import { DomainesComponent } from './domaines/domaines.component';
+import { AfficherPostesComponent } from './afficher-postes/afficher-postes.component';
+import { AcceuilComponent } from './acceuil/acceuil.component' ;
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { DomainesComponent } from './domaines/domaines.component' ;
     ConfirmemailComponent,
     HeaderComponent,
     InscriptionAbonneComponent,
-    DomainesComponent
+    DomainesComponent,
+    AfficherPostesComponent,
+    AcceuilComponent
 
 
 
