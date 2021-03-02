@@ -8,7 +8,6 @@ import {  HeaderComponent } from './header/header.component';
 import { InscriptionAbonneComponent} from './inscription-abonne/inscription-abonne.component' ;
 import {  DomainesComponent  } from './domaines/domaines.component';
 import {  AfficherPostesComponent  } from './afficher-postes/afficher-postes.component';
-import {  AcceuilComponent  } from './acceuil/acceuil.component';
 
 
 
@@ -23,7 +22,7 @@ const appRoutes:Routes= [
 { path :"inscription/abonne" , component : InscriptionAbonneComponent  } ,
 { path : "domaines" , component : DomainesComponent } ,
 { path : "afficherPoste" , component : AfficherPostesComponent } ,
-{ path : "acceuil" , component : AfficherPostesComponent } ,
+
 
 
 
