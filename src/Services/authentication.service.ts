@@ -72,14 +72,20 @@ export class AuthenticationService{
   getDomaines()
   {     if(this.jwtToken==null)
                   this.loadToken() ;
-        return this.http.get(this.host+"/domaines",{ headers : new HttpHeaders({ 'authorization' : this.jwtToken}) } ) ;
+        return this.http.get(this.host+"/domaines") ;
   }
 
 
   getSpecialites()
   {     if(this.jwtToken==null)
-                  this.loadToken() ;
-        return this.http.get(this.host+"/specialites",{ headers : new HttpHeaders({ 'authorization' : this.jwtToken}) } ) ;
+            this.loadToken() ;
+        return this.http.get(this.host+"/specialites" ) ;
+  }
+
+  getSections()
+  {     if(this.jwtToken==null)
+            this.loadToken() ;
+        return this.http.get(this.host+"/sections" ) ;
   }
 
 }

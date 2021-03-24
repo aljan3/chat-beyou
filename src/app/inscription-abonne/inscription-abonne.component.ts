@@ -26,7 +26,7 @@ export class InscriptionAbonneComponent implements OnInit {
   constructor(private authService:AuthenticationService, private router:Router) { }
 
   ngOnInit(): void {
-   this.authService. getDomaines()
+   this.authService.getDomaines()
         .subscribe(data=>{
         this.domaines =data ;
 
@@ -36,7 +36,7 @@ export class InscriptionAbonneComponent implements OnInit {
         });
 
         //specialites
-        this.authService. getSpecialites()
+        this.authService.getSpecialites()
                 .subscribe(data=>{
                 this.specialites =data ;
 

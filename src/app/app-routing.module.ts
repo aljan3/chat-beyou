@@ -1,3 +1,4 @@
+import { ContainerComponent } from './accueil/container/container.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InscriptionComponent } from './inscription/inscription.component';
@@ -22,7 +23,7 @@ const appRoutes:Routes= [
 { path :"inscription/abonne" , component : InscriptionAbonneComponent  } ,
 { path : "domaines" , component : DomainesComponent } ,
 { path : "afficherPoste" , component : AfficherPostesComponent } ,
-
+{ path : "accueil" , component : ContainerComponent } ,
 
 
 

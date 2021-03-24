@@ -15,6 +15,9 @@ import { HeaderComponent } from './header/header.component';
 import { InscriptionAbonneComponent} from './inscription-abonne/inscription-abonne.component';
 import { DomainesComponent } from './domaines/domaines.component';
 import { AfficherPostesComponent } from './afficher-postes/afficher-postes.component';
+import { SidebarComponent } from './accueil/sidebar/sidebar.component';
+import { ContainerComponent } from './accueil/container/container.component';
+import { RightBarComponent } from './accueil/right-bar/right-bar.component';
 
 
 @NgModule({
@@ -30,11 +33,9 @@ import { AfficherPostesComponent } from './afficher-postes/afficher-postes.compo
     InscriptionAbonneComponent,
     DomainesComponent,
     AfficherPostesComponent,
-
-
-
-
-
+    SidebarComponent,
+    ContainerComponent,
+    RightBarComponent,
   ],
   imports: [
     BrowserModule,
