@@ -18,7 +18,9 @@ import { AfficherPostesComponent } from './afficher-postes/afficher-postes.compo
 import { SidebarComponent } from './accueil/sidebar/sidebar.component';
 import { ContainerComponent } from './accueil/container/container.component';
 import { RightBarComponent } from './accueil/right-bar/right-bar.component';
-import { SectionsComponent } from './accueil/sections/sections.component';
+import { SectionsComponent } from './accueil/Poster/sections.component';
+import { ChatComponent } from './accueil/chat/chat.component';
+import { BulleChatComponent } from './bulle-chat/bulle-chat.component';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { SectionsComponent } from './accueil/sections/sections.component';
     ContainerComponent,
     RightBarComponent,
     SectionsComponent,
+    ChatComponent,
+    BulleChatComponent,
   ],
   imports: [
     BrowserModule,
