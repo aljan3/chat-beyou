@@ -1,10 +1,14 @@
 
-<div class="p-4" *ngIf="postes">
+
+    <div class="p-4" *ngIf="postes">
+      
+      <div *ngFor="let p of postes._embedded.postes" class="mb-5" style="border: solid 0.1em #EFEEED; border-radius: 40px/40px;">
+          <span class="p-5">{{p.contenu}} </span>
+          <br><br>
+      </div>
+    
+    </div>
 
   
-  <div *ngFor="let p of postes._embedded.postes" class="mb-5" style="border: solid 0.1em #EFEEED; border-radius: 40px/40px;">
-      <span class="p-5">{{p.contenu}} </span>
-      <br><br>
-  </div>
 
-</div>
+

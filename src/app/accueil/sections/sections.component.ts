@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { AuthenticationService} from 'src/Services/authentication.service';
 import { Router } from '@angular/router' ;
-import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-postes',
-  templateUrl: './postes.component.html',
-  styleUrls: ['./postes.component.css']
+  selector: 'app-sections',
+  templateUrl: './sections.component.html',
+  styleUrls: ['./sections.component.css']
 })
-export class PostesComponent implements OnInit {
+export class SectionsComponent implements OnInit {
+
 
   public sections ;
   constructor(private authService : AuthenticationService ,  private router:Router) { }
-
   ngOnInit(): void {
 
+    //sections
     this.authService.getSections()
     .subscribe(data=>{
     this.sections = data ;
@@ -23,6 +24,8 @@ export class PostesComponent implements OnInit {
       console.log(err);
       this.router.navigateByUrl("/Connexion");
     });
+
+
 
   }
 

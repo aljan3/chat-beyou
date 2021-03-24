@@ -18,6 +18,7 @@ import { AfficherPostesComponent } from './afficher-postes/afficher-postes.compo
 import { SidebarComponent } from './accueil/sidebar/sidebar.component';
 import { ContainerComponent } from './accueil/container/container.component';
 import { RightBarComponent } from './accueil/right-bar/right-bar.component';
+import { SectionsComponent } from './accueil/sections/sections.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { RightBarComponent } from './accueil/right-bar/right-bar.component';
     SidebarComponent,
     ContainerComponent,
     RightBarComponent,
+    SectionsComponent,
   ],
   imports: [
     BrowserModule,

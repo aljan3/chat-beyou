@@ -14,11 +14,14 @@ import { Router } from '@angular/router' ;
 })
 export class PostesComponent implements OnInit {
 
+  public sections ;
   public postes;
-
-  constructor( private authService : AuthenticationService , private router:Router) { }
+  constructor(private authService : AuthenticationService ,  private router:Router) { }
 
   ngOnInit() {
+
+    
+    //postes
     this.authService.getPostes()
     .subscribe(data=>{
     this.postes =data ;
