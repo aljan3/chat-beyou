@@ -8,33 +8,38 @@ import { HttpErrorResponse} from '@angular/common/http'
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
-  mode:number= 0 ;
+  response;
+  isSuccess = 0;
+  token;
 
   constructor(private authService:AuthenticationService, private router:Router) { }
 
   ngOnInit(): void {
-  let token = this.authService.loadToken();
-
-
+        this.token = this.authService.loadToken();
+        if(this.token!=null ){ 
+          this.router.navigateByUrl("/accueil");
+      }
   }
+
   onLogin(user)
   {
+
       this.authService.login(user)
       .subscribe(
           resp => {
             let jwt = resp.headers.get('authorization');
-             this.authService.saveToken(jwt);
-             console.log("hadi resp "  + resp) ;
-
-            this.mode=2 ;
-                  this.router.navigateByUrl("/postes");
-
-
-          } ,
-          err => {
-
-            this.mode = 1;
-          }
+            this.response = resp;
+            if(this.response.body != null)
+                this.response = this.response.body.message
+           console.log(jwt)
+           this.isSuccess = 1;
+            console.log(this.isSuccess)
+            if(jwt!=null ){ 
+                this.authService.saveToken(jwt);
+                this.router.navigateByUrl("/accueil");
+            }
+            
+          } 
       )
   }
   catchError()

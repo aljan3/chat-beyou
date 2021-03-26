@@ -49,6 +49,8 @@ export class AuthenticationService{
   loadToken()
     {
       this.jwtToken=localStorage.getItem('token') ;
+      return this.jwtToken
+
     }
 
 
