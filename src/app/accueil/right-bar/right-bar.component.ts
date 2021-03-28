@@ -1,3 +1,4 @@
+import { PostesComponent } from './../../postes/postes.component';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService} from 'src/Services/authentication.service';
 import { Router } from '@angular/router' ;
@@ -10,8 +11,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RightBarComponent implements OnInit {
 
+  public sectionName = "";
   public sections ;
-  constructor(private authService : AuthenticationService ,  private router:Router) { }
+  constructor(private authService : AuthenticationService ,  private router:Router ) { }
 
   ngOnInit(): void {
 
@@ -24,6 +26,15 @@ export class RightBarComponent implements OnInit {
       this.router.navigateByUrl("/Connexion");
     });
 
+  }
+
+  getPostesSection(){
+    return this.authService.getPostesSection();
+  }
+
+  changeSection(sectionName){
+    this.authService.changeSectionName(sectionName);
+    //  this.postesComponent.changePostes();
   }
 
 

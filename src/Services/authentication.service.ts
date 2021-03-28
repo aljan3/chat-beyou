@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient , HttpHeaders , HttpResponse} from '@angular/common/http';
-import {Observable} from "rxjs" ;
+import { HttpClient , HttpHeaders , HttpResponse , HttpParams} from '@angular/common/http';
+import {Observable, Subject} from "rxjs" ;
 import { User } from 'src/model/model.user' ;
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -13,11 +13,16 @@ export class AuthenticationService{
     private host:string="http://localhost:8080";
     private jwtToken ;
     private message  ;
+    public postes;
+    public sectionName = " ";
     public roles;
+
+    sectionNameChangeEvent: Subject<string> = new Subject<string>();
     constructor (private http:HttpClient){
+        
+      this.sectionName = " ";
 
-    }
-
+    }   
 
    login(user)
   {
@@ -58,7 +63,7 @@ export class AuthenticationService{
   {
     if(this.jwtToken==null)
          this.loadToken() ;
-    return this.http.get(this.host+"/postes",{ headers : new HttpHeaders({ 'authorization' : this.jwtToken}) } ) ;
+    return this.http.get(this.host+"/postes?projection=p2&size=120",{ headers : new HttpHeaders({ 'authorization' : this.jwtToken}) } ) ;
    }
   sendEmail(Email:feedback)
   {
@@ -89,5 +94,22 @@ export class AuthenticationService{
             this.loadToken() ;
         return this.http.get(this.host+"/sections" ) ;
   }
+
+  getPostesSection()
+  {
+          if(this.jwtToken==null)
+              this.loadToken() ;
+          console.log("hahyaa    " + this.sectionName )       
+          let params = new HttpParams()
+              .set('sectionName',this.sectionName)
+
+          return this.http.get(this.host+"/getPostes",{params: params} );
+        
+      }
+
+    changeSectionName(nom){
+      this.sectionName = nom;
+      this.sectionNameChangeEvent.next(this.sectionName);
+    }
 
 }
