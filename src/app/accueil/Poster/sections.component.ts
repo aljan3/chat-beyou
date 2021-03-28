@@ -12,7 +12,17 @@ export class SectionsComponent implements OnInit {
 
 
   public sections ;
-  constructor(private authService : AuthenticationService ,  private router:Router) { }
+  public sectionName =" ";
+  public _subscription;
+
+  constructor(private authService : AuthenticationService ,  private router:Router ) {
+
+    this.sectionName = authService.sectionName;
+    this._subscription = authService.sectionNameChangeEvent.subscribe((value) => { 
+      this.sectionName = value;
+    });
+
+   }
   ngOnInit(): void {
 
     //sections
