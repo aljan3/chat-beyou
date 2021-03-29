@@ -31,9 +31,12 @@ export class ConnexionComponent implements OnInit {
             this.response = resp;
             if(this.response.body != null)
                 this.response = this.response.body.message
-           console.log(jwt)
+
+           console.log("hadi jwt ", jwt);
+
            this.isSuccess = 1;
             console.log(this.isSuccess)
+            
             if(jwt!=null ){ 
                 this.authService.saveToken(jwt);
                 this.router.navigateByUrl("/accueil");
@@ -42,6 +45,7 @@ export class ConnexionComponent implements OnInit {
           } 
       )
   }
+  
   catchError()
   {
 

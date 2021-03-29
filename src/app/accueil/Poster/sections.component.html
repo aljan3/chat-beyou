@@ -3,10 +3,12 @@
 
     <h4 class="font-italic">Racontez-nous, on est là pour vous !</h4> 
 
-    <form class="form-group" action="/addPoste" method="POST">
+    <form class="form-group" #f="ngForm" ngNativeValidate  (ngSubmit)="addPoste(f.value, username)">
         <label class="sr-only" for="message">post</label>
-        <input type="hidden" name="sectionName" id="sectionName" value="{{sectionName}}">
-        <textarea class="form-control" name="contenu" id="contenu" rows="3" ></textarea> <br> 
+        <select required ngModel="" class="form-control" name="sectionName" id="sectionName">
+            <option  *ngFor="let section of sections?._embedded.sections" [value]="section.sectionName">{{section.sectionName}}</option>
+        </select>
+        <textarea ngModel="" required class="form-control" name="contenu" id="contenu" rows="3" ></textarea> <br> 
         <div class="btn-group">
             <button type="submit" class="btn btn-primary">publier</button>
         </div>        

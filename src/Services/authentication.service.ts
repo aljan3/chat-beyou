@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 
+
 import { HttpClient , HttpHeaders , HttpResponse , HttpParams} from '@angular/common/http';
 import {Observable, Subject} from "rxjs" ;
 import { User } from 'src/model/model.user' ;
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { feedback } from 'src/model/model.feedback' ;
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable()
 
@@ -15,9 +17,11 @@ export class AuthenticationService{
     private message  ;
     public postes;
     public sectionName = " ";
-    public roles;
+    public roles:Array<any>=[];
+    public myUser;
 
     sectionNameChangeEvent: Subject<string> = new Subject<string>();
+
     constructor (private http:HttpClient){
         
       this.sectionName = " ";
@@ -28,8 +32,13 @@ export class AuthenticationService{
   {
     this.loadToken();
     return this.http.post(this.host+"/login",user,{observe : 'response'}) ;
-
   }
+
+  logout(){
+    this.jwtToken = null;
+    localStorage.removeItem('token');
+  }
+
   saveUser(UserForm:User)
     {
        let headers = new HttpHeaders();
@@ -46,16 +55,28 @@ export class AuthenticationService{
   saveToken(jwt)
   {
     localStorage.setItem('token', jwt);
-    //let jwtHelper = new JwtHelper();
-    //this.roles = jwtHelper.decodeToken(this.jwtToken).roles;
+    let jwtHelper = new JwtHelperService();
+    this.roles = jwtHelper.decodeToken(jwt).roles;
+    this.myUser = jwtHelper.decodeToken(jwt).user.username;
+    console.log("hahdo user  ",this.myUser);
 
   }
 
   loadToken()
     {
       this.jwtToken=localStorage.getItem('token') ;
+      
       return this.jwtToken
 
+    }
+
+    //get User From Token
+    getUser(){
+      let jwtHelper = new JwtHelperService();
+      this.roles = jwtHelper.decodeToken(this.jwtToken).roles;
+      this.myUser = jwtHelper.decodeToken(this.jwtToken).user;
+      console.log("this is the user connecte "+this.myUser)
+      return this.myUser;
     }
 
 
@@ -110,6 +131,15 @@ export class AuthenticationService{
     changeSectionName(nom){
       this.sectionName = nom;
       this.sectionNameChangeEvent.next(this.sectionName);
+    }
+
+    addPoste(form , username){
+      let params = new HttpParams()
+      .set('sectionName', form.sectionName)
+      .set('contenu',form.contenu)
+      .set('username',username);
+      console.log("params  ",params)
+      return this.http.get("http://localhost:8080/addPoste",{params: params} )
     }
 
 }

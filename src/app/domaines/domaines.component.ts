@@ -20,6 +20,7 @@ export class DomainesComponent implements OnInit {
 
       }, err=>{
         console.log(err);
+        this.authService.logout();
         this.router.navigateByUrl("/Connexion");
       });
     }

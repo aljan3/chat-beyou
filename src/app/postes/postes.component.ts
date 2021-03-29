@@ -19,6 +19,7 @@ export class PostesComponent implements OnInit {
   public sectionName;
   public postes;
   public _subscription;
+
   constructor(private authService : AuthenticationService ,  private router:Router ) {
     this.sectionName = authService.sectionName;
     this._subscription = authService.sectionNameChangeEvent.subscribe((value) => { 
@@ -33,6 +34,9 @@ export class PostesComponent implements OnInit {
             this.router.navigateByUrl("/Connexion");
           });
     });
+
+    
+
    }
 
   ngOnInit() {
@@ -43,6 +47,7 @@ export class PostesComponent implements OnInit {
       console.log(this.postes)
     }, err=>{
       console.log(err);
+      this.authService.logout();
       this.router.navigateByUrl("/Connexion");
     });
   }
