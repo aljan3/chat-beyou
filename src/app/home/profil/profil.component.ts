@@ -17,6 +17,7 @@ export class ProfilComponent implements OnInit {
   public roles;
   public myUser;
   public sections;
+  public sectionName = "";
 
   constructor(private authService : AuthenticationService ,  private router:Router) {
   }
@@ -37,6 +38,14 @@ export class ProfilComponent implements OnInit {
 
   }
 
+  getPostesSection(){
+    return this.authService.getPostesSection();
+  }
+
+  changeSection(sectionName){
+    this.authService.changeSectionName(sectionName);
+    //  this.postesComponent.changePostes();
+  }
   
 
 

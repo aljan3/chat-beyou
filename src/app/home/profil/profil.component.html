@@ -3,7 +3,7 @@
             <div class="user-profile">
                 <div class="username-dt">
                     <div class="usr-pic">
-                        <img src="http://via.placeholder.com/100x100" alt="">
+                        <img src="https://i.ibb.co/h9KNyNm/person-512-1.jpg" alt="">
                     </div>
                 </div><!--username-dt end-->
                 <div class="user-specs">
@@ -30,13 +30,13 @@
                 <h3>Sections</h3>
             </div><!--sd-title end-->
             <div class="suggestions-list">
-                <div style="border-bottom: 0.5px solid gray;" class="suggestion-usd" *ngFor="let s of sections._embedded.sections">
-                    <img src="http://via.placeholder.com/35x35" alt="">
+                <button (click)="changeSection(s.sectionName);" style="border-bottom: 0.5px solid gray; cursor: pointer;" class="suggestion-usd btn btn-outline-danger" *ngFor="let s of sections._embedded.sections">
+                    <img src="https://i.ibb.co/d6x5sVG/white-hashtag-red-circle-concept-social-media-micro-blogging-pr-popularity-blogger-grille-grid-isola.jpg" alt="">
                     <div class="sgt-text">
                         <h4>{{s.sectionName}}</h4>
                         <span>{{s.sectionName}}</span>
                     </div>
-                </div>
+                </button>
             </div><!--suggestions-list end-->
         </div><!--suggestions end-->
         <div class=" full-width">

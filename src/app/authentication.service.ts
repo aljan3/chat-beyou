@@ -118,8 +118,8 @@ export class AuthenticationService{
         return this.http.get(this.host+"/sections" ) ;
   }
 
-  getPostesSection()
-  {
+    getPostesSection()
+    {
           if(this.jwtToken==null)
               this.loadToken() ;
           console.log("hahyaa    " + this.sectionName )       
@@ -143,5 +143,7 @@ export class AuthenticationService{
       console.log("params  ",params)
       return this.http.get("http://localhost:8080/addPoste",{params: params} )
     }
+
+    
 
 }

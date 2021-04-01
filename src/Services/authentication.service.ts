@@ -142,4 +142,20 @@ export class AuthenticationService{
       return this.http.get("http://localhost:8080/addPoste",{params: params} )
     }
 
+    
+    commenterPoste(contenu, username, idPoste)
+    {
+          
+          if(this.jwtToken==null)
+              this.loadToken() ;
+          let params = new HttpParams()
+              .set('contenu',contenu)
+              .set('username',username)
+              .set('idPoste',idPoste)
+
+          return this.http.get(this.host+"/commenterPoste",{params: params} );
+        
+      }
+
+
 }

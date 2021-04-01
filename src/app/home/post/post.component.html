@@ -1,7 +1,7 @@
     <div class="main-ws-sec">
         <div class="post-topbar">
             <div class="user-picy">
-                <img src="http://via.placeholder.com/100x100" alt="">
+                <img src="https://i.ibb.co/h9KNyNm/person-512-1.jpg" alt="">
             </div>
             <div class="post-st">
                 <ul>
@@ -15,7 +15,7 @@
                 <div class="post-bar no-margin">
                     <div class="post_topbar">
                         <div class="usy-dt">
-                            <img src="http://via.placeholder.com/50x50" alt="">
+                            <img src="https://i.ibb.co/HHwjF5W/person-512-1-1.jpg" alt="">
                             <div class="usy-name">
                                 <h3>Anonyme</h3>
                             </div>
@@ -36,9 +36,9 @@
                             <li>
                                 <a href="#"><i class="la la-heart"></i> Like</a>
                                 <img src="images/liked-img.png" alt="">
-                                <span>25</span>
+                                <span style="margin-left: 2px;">25</span>
                             </li> 
-                            <li><a href="#" title="" class="com"><img src="images/com.png" alt=""> Commentaires {{p.commentaires.length}}</a></li>
+                            <li ><a href="#" title="" class="com"><img src="images/com.png" alt=""> Commentaires {{p.commentaires.length}}</a></li>
                         </ul>
                         <a><i class="la la-eye"></i>Views 50</a>
                     </div>
@@ -49,7 +49,7 @@
                             <li>
                                 <div class="comment-list" *ngFor="let c of p.commentaires">
                                     <div class="bg-img">
-                                        <img src="http://via.placeholder.com/40x40" alt="">
+                                        <img src="https://i.ibb.co/1mNwmdf/person-512-2.jpg" alt="">
                                     </div>
                                     <div class="comment">
                                         <h3>Anonyme  <a href="#" title="" style="font-size: medium;" ><i class="fa fa-exclamation-triangle"></i></a></h3> <!--{{c.userCommentaire.username}}-->
@@ -61,11 +61,12 @@
                     </div><!--comment-sec end-->
                     <div class="post-comment">
                         <div class="cm_img">
-                            <img src="http://via.placeholder.com/40x40" alt="">
+                            <img src="https://i.ibb.co/1mNwmdf/person-512-2.jpg" alt="">
                         </div>
                         <div class="comment_box">
-                            <form>
-                                <input type="text" placeholder="Post a comment">
+                            <form #f="ngForm" ngNativeValidate  (ngSubmit)="commenterPoste(f.value, username)">
+                                <input type="text" ngModel="" required  name="contenu" id="contenu" placeholder="Post a comment">
+                                <input type="hidden" [(ngModel)]="p.id"   name="idPoste" id="idPoste" >
                                 <button type="submit">Send</button>
                             </form>
                         </div>
@@ -83,27 +84,22 @@
     </div><!--main-ws-sec end-->
 
 
-    <div class="post-popup job_post">
+    <div id="pop" class="post-popup job_post">
         <div class="post-project">
             <h3>Publier un poste</h3>
             <div class="post-project-fields">
-                <form>
+                <form #f="ngForm" ngNativeValidate  (ngSubmit)="addPoste(f.value, username)">
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="text" name="title" placeholder="Title">
-                        </div>
-                        <div class="col-lg-12">
+                            <legend class="mb-1">Choisissez la section correspondante </legend>
                             <div class="inp-field">
-                                <select>
-                                    <option>Category</option>
-                                    <option>Category 1</option>
-                                    <option>Category 2</option>
-                                    <option>Category 3</option>
+                                <select required ngModel="" name="sectionName" id="sectionName">
+                                    <option  *ngFor="let section of sections?._embedded.sections" [value]="section.sectionName">{{section.sectionName}}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-12">
-                            <textarea name="description" placeholder="Description"></textarea>
+                            <textarea ngModel="" required class="form-control" name="contenu" id="contenu" placeholder="Description"></textarea>
                         </div>
                         <div class="col-lg-12">
                             <ul>
