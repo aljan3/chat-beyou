@@ -19,6 +19,8 @@ import { PostComponent } from './home/post/post.component';
 import { RightBarComponent } from './home/right-bar/right-bar.component';
 import { ChatComponent } from './home/chat/chat.component';
 import { MonProfilComponent } from './mon-profil/mon-profil.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -45,7 +47,9 @@ import { MonProfilComponent } from './mon-profil/mon-profil.component';
     BrowserModule,
     AppRoutingModule ,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InfiniteScrollModule,
+    NgxSpinnerModule
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

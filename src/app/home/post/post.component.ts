@@ -40,6 +40,7 @@ export class PostComponent implements OnInit {
     this.authService.getPostesSection()
     .subscribe(data=>{
     this.postes =data ;
+    console.log("les posts : ", data)
     }, err=>{
       this.authService.logout();
          this.router.navigateByUrl("/Connexion");
