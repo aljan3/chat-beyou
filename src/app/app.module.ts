@@ -1,26 +1,25 @@
+import { InscriptionComponent } from './inscription/inscription.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { DeconnexionComponent } from './deconnexion/deconnexion.component';
+import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
+import { InscriptionAbonneComponent } from './inscription-abonne/inscription-abonne.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {RouterModule,Routes} from '@angular/router' ;
-import { InscriptionComponent } from './inscription/inscription.component';
-import { ConnexionComponent } from './connexion/connexion.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationService} from 'src/Services/authentication.service';
-import { PostesComponent } from './postes/postes.component';
-import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { HeaderComponent } from './header/header.component';
-import { InscriptionAbonneComponent} from './inscription-abonne/inscription-abonne.component';
-import { DomainesComponent } from './domaines/domaines.component';
-import { AfficherPostesComponent } from './afficher-postes/afficher-postes.component';
-import { SidebarComponent } from './accueil/sidebar/sidebar.component';
-import { ContainerComponent } from './accueil/container/container.component';
-import { RightBarComponent } from './accueil/right-bar/right-bar.component';
-import { SectionsComponent } from './accueil/Poster/sections.component';
-import { ChatComponent } from './accueil/chat/chat.component';
-import { BulleChatComponent } from './bulle-chat/bulle-chat.component';
+import { ProfilComponent } from './home/profil/profil.component';
+import { ContainerComponent } from './home/container/container.component';
+import { PostComponent } from './home/post/post.component';
+import { RightBarComponent } from './home/right-bar/right-bar.component';
+import { ChatComponent } from './home/chat/chat.component';
+import { MonProfilComponent } from './mon-profil/mon-profil.component';
+
 
 
 @NgModule({
@@ -30,24 +29,23 @@ import { BulleChatComponent } from './bulle-chat/bulle-chat.component';
     AppComponent,
     InscriptionComponent,
     ConnexionComponent,
-    PostesComponent,
+    DeconnexionComponent,
     ConfirmemailComponent,
-    HeaderComponent,
     InscriptionAbonneComponent,
-    DomainesComponent,
-    AfficherPostesComponent,
-    SidebarComponent,
+    HeaderComponent,
+    ProfilComponent,
     ContainerComponent,
+    PostComponent,
     RightBarComponent,
-    SectionsComponent,
     ChatComponent,
-    BulleChatComponent,
+    MonProfilComponent,
   ],
   imports: [
+    FormsModule ,
     BrowserModule,
     AppRoutingModule ,
-    FormsModule ,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

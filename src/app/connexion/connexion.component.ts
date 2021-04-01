@@ -12,7 +12,9 @@ export class ConnexionComponent implements OnInit {
   isSuccess = 0;
   token;
 
-  constructor(private authService:AuthenticationService, private router:Router) { }
+  constructor(private authService:AuthenticationService, private router:Router) {
+    
+   }
 
   ngOnInit(): void {
         this.token = this.authService.loadToken();
@@ -39,6 +41,7 @@ export class ConnexionComponent implements OnInit {
             
             if(jwt!=null ){ 
                 this.authService.saveToken(jwt);
+                console.log("imaad")
                 this.router.navigateByUrl("/accueil");
             }
             

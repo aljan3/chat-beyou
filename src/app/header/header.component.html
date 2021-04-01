@@ -1,120 +1,206 @@
-
-<nav style="color: transparent;" class="navbar navbar-expand-lg navbar-light ">
-  <img width="80px" src="https://i.ibb.co/58pB1QB/fbe9835738544e8db2b8b9f808432b94.png" alt="">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item mr-5">
-        <a class="nav-link disabled" href="#"> </a>
-      </li>
-      <li class="ml-5">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      </li>
-      <li class="ml-2">
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-      </li>
-      
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-        <p style="color: black;">Username</p>
-    </form>
-  </div>
-</nav>
-
-
-
-<!-- hahahahahahahh   -->
-
-
-<!--
-<div class="row" style="color: white;">
-
-    <div class="col-2" style="  margin-left: 1%; ">
-        <div class="row">
-            <div class="col-6">
-                <img width="80px" src="https://i.ibb.co/58pB1QB/fbe9835738544e8db2b8b9f808432b94.png" alt="">
+<header>
+    <div class="container">
+        <div class="header-data">
+            <div class="logo">
+                <a href="index.html" title=""><img src="assets/images/logo.png" alt=""></a>
+            </div><!--logo end-->
+            <div class="search-bar">
+                <form>
+                    <input type="text" name="search" placeholder="Search...">
+                    <button type="submit"><i class="la la-search"></i></button>
+                </form>
+            </div><!--search-bar end-->
+            <nav>
+                <ul>
+                    <li>
+                        <a routerLink="/accueil" title="">
+                            <span><img src="assets/images/icon1.png" alt=""></span>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="companies.html" title="">
+                            <span><img src="assets/images/icon2.png" alt=""></span>
+                            Companies
+                        </a>
+                        <ul>
+                            <li><a href="companies.html" title="">Companies</a></li>
+                            <li><a href="company-profile.html" title="">Company Profile</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="projects.html" title="">
+                            <span><img src="assets/images/icon3.png" alt=""></span>
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profiles.html" title="">
+                            <span><img src="assets/images/icon4.png" alt=""></span>
+                            Professionnels
+                        </a>
+                        <ul>
+                            <li><a href="user-profile.html" title="">Medecins</a></li>
+                            <li><a href="my-profile-feed.html" title="">Avocats</a></li>
+                            <li><a href="my-profile-feed.html" title="">Coachs</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="jobs.html" title="">
+                            <span><img src="assets/images/icon5.png" alt=""></span>
+                            Jobs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="" class="not-box-open">
+                            <span><img src="assets/images/icon6.png" alt=""></span>
+                            Messages
+                        </a>
+                        <div class="notification-box msg">
+                            <div class="nt-title">
+                                <h4>Setting</h4>
+                                <a href="#" title="">Clear all</a>
+                            </div>
+                            <div class="nott-list">
+                                <div class="notfication-details">
+                                      <div class="noty-user-img">
+                                          <img src="assets/images/resources/ny-img1.png" alt="">
+                                      </div>
+                                      <div class="notification-info">
+                                          <h3><a href="messages.html" title="">Jassica William</a> </h3>
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                                          <span>2 min ago</span>
+                                      </div><!--notification-info -->
+                                  </div>
+                                  <div class="notfication-details">
+                                      <div class="noty-user-img">
+                                          <img src="assets/images/resources/ny-img2.png" alt="">
+                                      </div>
+                                      <div class="notification-info">
+                                          <h3><a href="messages.html" title="">Jassica William</a></h3>
+                                          <p>Lorem ipsum dolor sit amet.</p>
+                                          <span>2 min ago</span>
+                                      </div><!--notification-info -->
+                                  </div>
+                                  <div class="notfication-details">
+                                      <div class="noty-user-img">
+                                          <img src="assets/images/resources/ny-img3.png" alt="">
+                                      </div>
+                                      <div class="notification-info">
+                                          <h3><a href="messages.html" title="">Jassica William</a></h3>
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo incididunt ut labore et dolore magna aliqua.</p>
+                                          <span>2 min ago</span>
+                                      </div><!--notification-info -->
+                                  </div>
+                                  <div class="view-all-nots">
+                                      <a href="messages.html" title="">View All Messsages</a>
+                                  </div>
+                            </div><!--nott-list end-->
+                        </div><!--notification-box end-->
+                    </li>
+                    <li>
+                        <a href="#" title="" class="not-box-open">
+                            <span><img src="assets/images/icon7.png" alt=""></span>
+                            Notification
+                        </a>
+                        <div class="notification-box">
+                            <div class="nt-title">
+                                <h4>Setting</h4>
+                                <a href="#" title="">Clear all</a>
+                            </div>
+                            <div class="nott-list">
+                                <div class="notfication-details">
+                                      <div class="noty-user-img">
+                                          <img src="assets/images/resources/ny-img1.png" alt="">
+                                      </div>
+                                      <div class="notification-info">
+                                          <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
+                                          <span>2 min ago</span>
+                                      </div><!--notification-info -->
+                                  </div>
+                                  <div class="notfication-details">
+                                      <div class="noty-user-img">
+                                          <img src="assets/images/resources/ny-img2.png" alt="">
+                                      </div>
+                                      <div class="notification-info">
+                                          <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
+                                          <span>2 min ago</span>
+                                      </div><!--notification-info -->
+                                  </div>
+                                  <div class="notfication-details">
+                                      <div class="noty-user-img">
+                                          <img src="assets/images/resources/ny-img3.png" alt="">
+                                      </div>
+                                      <div class="notification-info">
+                                          <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
+                                          <span>2 min ago</span>
+                                      </div><!--notification-info -->
+                                  </div>
+                                  <div class="notfication-details">
+                                      <div class="noty-user-img">
+                                          <img src="assets/images/resources/ny-img2.png" alt="">
+                                      </div>
+                                      <div class="notification-info">
+                                          <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
+                                          <span>2 min ago</span>
+                                      </div><!--notification-info -->
+                                  </div>
+                                  <div class="view-all-nots">
+                                      <a href="#" title="">View All Notification</a>
+                                  </div>
+                            </div><!--nott-list end-->
+                        </div><!--notification-box end-->
+                    </li>
+                </ul>
+            </nav><!--nav end-->
+            <div class="menu-btn">
+                <a href="#" title=""><i class="fa fa-bars"></i></a>
+            </div><!--menu-btn end-->
+            <div class="user-account">
+                <div class="user-info">
+                    <img src="http://via.placeholder.com/30x30" alt="">
+                    <a href="#" title="">John</a>
+                    <i class="la la-sort-down"></i>
+                </div>
+                <div class="user-account-settingss">
+                    <h3>Online Status</h3>
+                    <ul class="on-off-status">
+                        <li>
+                            <div class="fgt-sec">
+                                <input type="radio" name="cc" id="c5">
+                                <label for="c5">
+                                    <span></span>
+                                </label>
+                                <small>Online</small>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fgt-sec">
+                                <input type="radio" name="cc" id="c6">
+                                <label for="c6">
+                                    <span></span>
+                                </label>
+                                <small>Offline</small>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>Custom Status</h3>
+                    <div class="search_form">
+                        <form>
+                            <input type="text" name="search">
+                            <button type="submit">Ok</button>
+                        </form>
+                    </div><!--search_form end-->
+                    <h3>Setting</h3>
+                    <ul class="us-links">
+                        <li><a href="profile-account-setting.html" title="">Account Setting</a></li>
+                        <li><a href="#" title="">Privacy</a></li>
+                        <li><a href="#" title="">Faqs</a></li>
+                        <li><a href="#" title="">Terms & Conditions</a></li>
+                    </ul>
+                    <h3 class="tc"><a routerLink="/logout" title="">Logout</a></h3>
+                </div><!--user-account-settingss end-->
             </div>
-            <div class="col-6" style="padding-left: 39%; padding-top: 13%;">
-              <i style="color: black; border-bottom: solid 0.2em rgba(7, 63, 255, 0.5) ; font-size: 1.2em;" class="fa fa-home" aria-hidden="true"></i>
-            </div>
-        </div>
-        
-      </div>
-
-    <div class="col-7"  style="  margin-left: 3.5%;">
-        <div class="row">
-            <div class="col-3"  style="color: black; padding-top: 3%; font-size: 1.4em; ">
-                Accueil
-            </div>
-            <div class="col-6">
-
-            </div>
-            <div class="col-3">
-              <i style="color: black; padding-top: 19%; font-size: 1.2em;" class="fa fa-search" aria-hidden="true"></i>
-              <button class="btn btn-info ml-3">Rechercher</button>
-            </div>
-        </div>
+        </div><!--header-data end-->
     </div>
-
-    <div class="col-2 pl-5" >
-        <div class="row">
-            <div class="col-6">
-              <i style="color: black; padding-top: 40%; font-size: 1.4em;" class="far fa-bell" aria-hidden="true"></i>
-            </div>
-
-            <div class="col-6" style="color: black;  padding-top: 13%; font-size: 1.05em;">
-                Username
-            </div>
-        </div>
-    </div>
-
-</div>-->
-
-<!--
-<div  style="background-color: rgba(147, 255, 255, 0.1)">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/postes">Postes <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#" routerLink="/Connexion">Se Connecter </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/inscription">Inscription </a>
-        </li>
-
-      </ul>
-    </div>
-  </nav>
-</div>
--->
+</header><!--header end-->

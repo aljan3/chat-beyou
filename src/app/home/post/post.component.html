@@ -1,0 +1,119 @@
+    <div class="main-ws-sec">
+        <div class="post-topbar">
+            <div class="user-picy">
+                <img src="http://via.placeholder.com/100x100" alt="">
+            </div>
+            <div class="post-st">
+                <ul>
+                    <li><a class="post-jb active" href="#" title="">Publier un poste</a></li>
+                </ul>
+            </div><!--post-st end-->
+        </div><!--post-topbar end-->
+        <div class="posts-section">
+            <div class="posty" *ngFor="let p of postes?.reverse()">
+                <hr>
+                <div class="post-bar no-margin">
+                    <div class="post_topbar">
+                        <div class="usy-dt">
+                            <img src="http://via.placeholder.com/50x50" alt="">
+                            <div class="usy-name">
+                                <h3>Anonyme</h3>
+                            </div>
+                        </div>
+                        <div class="ed-opts">
+                            <a href="#" title="" class="pl-2" style="font-size: medium;" ><i class="fa fa-heart"></i></a>
+                            <a href="#" title="" style="font-size: medium;" ><i class="fa fa-exclamation-triangle"></i></a>
+                        </div>
+                    </div>
+                    <div class="job_descp">
+                        <ul class="job-dt">
+                            <li><a href="#" title="">{{p.section.sectionName}}</a></li>
+                        </ul>
+                        <p>{{ p.contenu }}</p>
+                    </div>
+                    <div class="job-status-bar">
+                        <ul class="like-com">
+                            <li>
+                                <a href="#"><i class="la la-heart"></i> Like</a>
+                                <img src="images/liked-img.png" alt="">
+                                <span>25</span>
+                            </li> 
+                            <li><a href="#" title="" class="com"><img src="images/com.png" alt=""> Commentaires {{p.commentaires.length}}</a></li>
+                        </ul>
+                        <a><i class="la la-eye"></i>Views 50</a>
+                    </div>
+                </div><!--post-bar end-->
+                <div class="comment-section">
+                    <div class="comment-sec">
+                        <ul>
+                            <li>
+                                <div class="comment-list" *ngFor="let c of p.commentaires">
+                                    <div class="bg-img">
+                                        <img src="http://via.placeholder.com/40x40" alt="">
+                                    </div>
+                                    <div class="comment">
+                                        <h3>Anonyme  <a href="#" title="" style="font-size: medium;" ><i class="fa fa-exclamation-triangle"></i></a></h3> <!--{{c.userCommentaire.username}}-->
+                                        <p>{{c.contenu}}</p>
+                                    </div>
+                                </div><!--comment-list end--> 
+                            </li>
+                        </ul>
+                    </div><!--comment-sec end-->
+                    <div class="post-comment">
+                        <div class="cm_img">
+                            <img src="http://via.placeholder.com/40x40" alt="">
+                        </div>
+                        <div class="comment_box">
+                            <form>
+                                <input type="text" placeholder="Post a comment">
+                                <button type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div><!--post-comment end-->
+                </div><!--comment-section end-->
+            </div><!--posty end-->
+            <div class="process-comm">
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div><!--process-comm end-->
+        </div><!--posts-section end-->
+    </div><!--main-ws-sec end-->
+
+
+    <div class="post-popup job_post">
+        <div class="post-project">
+            <h3>Publier un poste</h3>
+            <div class="post-project-fields">
+                <form>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="text" name="title" placeholder="Title">
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="inp-field">
+                                <select>
+                                    <option>Category</option>
+                                    <option>Category 1</option>
+                                    <option>Category 2</option>
+                                    <option>Category 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <textarea name="description" placeholder="Description"></textarea>
+                        </div>
+                        <div class="col-lg-12">
+                            <ul>
+                                <li><button class="active" type="submit" value="post">Post</button></li>
+                                <li><a href="#" title="">Cancel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div><!--post-project-fields end-->
+            <a href="#" title=""><i class="la la-times-circle-o"></i></a>
+        </div><!--post-project end-->
+    </div><!--post-project-popup end-->

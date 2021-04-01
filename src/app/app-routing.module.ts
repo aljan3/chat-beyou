@@ -1,37 +1,28 @@
-import { ContainerComponent } from './accueil/container/container.component';
+import { ContainerComponent } from './home/container/container.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ConnexionComponent } from './connexion/connexion.component';
-import { PostesComponent } from './postes/postes.component';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
-import {  HeaderComponent } from './header/header.component';
 import { InscriptionAbonneComponent} from './inscription-abonne/inscription-abonne.component' ;
-import {  DomainesComponent  } from './domaines/domaines.component';
-import {  AfficherPostesComponent  } from './afficher-postes/afficher-postes.component';
-
-
-
-
+import { MonProfilComponent } from './mon-profil/mon-profil.component';
+import { DeconnexionComponent } from './deconnexion/deconnexion.component';
 
 
 const appRoutes:Routes= [
   { path:"inscription",component: InscriptionComponent } ,
    { path:"Connexion",component: ConnexionComponent } ,
-   { path:"postes",component: PostesComponent } ,
 { path:"confirmEmail",component: ConfirmemailComponent }  ,
 { path :"inscription/abonne" , component : InscriptionAbonneComponent  } ,
-{ path : "domaines" , component : DomainesComponent } ,
-{ path : "afficherPoste" , component : AfficherPostesComponent } ,
-{ path : "accueil" , component : ContainerComponent } ,
 
-
-
-
-   { path:"",
+    { path:"accueil",component: ContainerComponent } ,
+    { path:"profil",component: MonProfilComponent } ,
+    { path : "logout" , component : DeconnexionComponent }, 
+    { path:"",
     redirectTo: "/Connexion",
     pathMatch:'full'
-    }
+    },
+
 
 ] ;
 

@@ -1,0 +1,97 @@
+    <div class="main-left-sidebar no-margin">
+        <div class="user-data full-width">
+            <div class="user-profile">
+                <div class="username-dt">
+                    <div class="usr-pic">
+                        <img src="http://via.placeholder.com/100x100" alt="">
+                    </div>
+                </div><!--username-dt end-->
+                <div class="user-specs">
+                    <h3>{{username}}</h3>
+                    <span>Graphic Designer at Self Employed</span>
+                </div>
+            </div><!--user-profile end-->
+            <ul class="user-fw-status">
+                <li>
+                    <h4>Following</h4>
+                    <span>34</span>
+                </li>
+                <li>
+                    <h4>Followers</h4>
+                    <span>155</span>
+                </li>
+                <li>
+                    <a routerLink="/profil" title="">View Profile</a>
+                </li>
+            </ul>
+        </div><!--user-data end-->
+        <div class="suggestions full-width">
+            <div class="sd-title">
+                <h3>Sections</h3>
+            </div><!--sd-title end-->
+            <div class="suggestions-list">
+                <div style="border-bottom: 0.5px solid gray;" class="suggestion-usd" *ngFor="let s of sections._embedded.sections">
+                    <img src="http://via.placeholder.com/35x35" alt="">
+                    <div class="sgt-text">
+                        <h4>{{s.sectionName}}</h4>
+                        <span>{{s.sectionName}}</span>
+                    </div>
+                </div>
+            </div><!--suggestions-list end-->
+        </div><!--suggestions end-->
+        <div class=" full-width">
+            <div class="widget widget-jobs">
+                <div class="sd-title">
+                    <h3>Liste des Professionnels</h3>
+                    <i class="la la-ellipsis-v"></i>
+                </div>
+                <div class="jobs-list">
+                    <div class="job-info">
+                        <div class="job-details">
+                            <h3>Senior Product Designer</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+                        </div>
+                        <div class="hr-rate">
+                            <span>$25/hr</span>
+                        </div>
+                    </div><!--job-info end-->
+                    <div class="job-info">
+                        <div class="job-details">
+                            <h3>Senior UI / UX Designer</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+                        </div>
+                        <div class="hr-rate">
+                            <span>$25/hr</span>
+                        </div>
+                    </div><!--job-info end-->
+                    <div class="job-info">
+                        <div class="job-details">
+                            <h3>Junior Seo Designer</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+                        </div>
+                        <div class="hr-rate">
+                            <span>$25/hr</span>
+                        </div>
+                    </div><!--job-info end-->
+                    <div class="job-info">
+                        <div class="job-details">
+                            <h3>Senior PHP Designer</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+                        </div>
+                        <div class="hr-rate">
+                            <span>$25/hr</span>
+                        </div>
+                    </div><!--job-info end-->
+                    <div class="job-info">
+                        <div class="job-details">
+                            <h3>Senior Developer Designer</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+                        </div>
+                        <div class="hr-rate">
+                            <span>$25/hr</span>
+                        </div>
+                    </div><!--job-info end-->
+                </div><!--jobs-list end-->
+            </div><!--widget-jobs end-->
+        </div><!--tags-sec end-->
+    </div><!--main-left-sidebar end-->
