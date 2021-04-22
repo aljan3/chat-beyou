@@ -1,5 +1,356 @@
+<!-----
 <div class="chatbox-list">
+   
     <div class="chatbox">
+        <div class="chat-mg">
+            <a href="#" title=""><img src="https://i.ibb.co/TYWRDW0/person-512-3.jpg" alt=""></a>
+            <span> </span> 
+        </div>
+        <div class="conversation-box">
+            <div class="con-title mg-3">
+                <div class="chat-user-info">
+                    <img src="http://via.placeholder.com/34x33" alt="">
+                    <h3>John Doe <span class="status-info"></span></h3>
+                </div>
+                <div class="st-icons">
+                    <a href="#" title=""><i class="la la-cog"></i></a>
+                    <a href="#" title="" class="close-chat"><i class="la la-minus-square"></i></a>
+                    <a href="#" title="" class="close-chat"><i class="la la-close"></i></a>
+                </div>
+            </div>
+           
+            <div class="chat-hist mCustomScrollbar" data-mcs-theme="dark" >
+                
+               
+        
+                <div class="chat-msg st2"  *ngFor="let msg1 of messageService.msgReceived">
+                    <p>{{msg1}}</p>
+                   
+                   
+                    <span>5 minutes ago</span>
+                </div>
+                <div class="chat-msg"  *ngFor="let msg of messageService.msg "  >
+                
+                    <p>  {{msg}} </p>
+                    <span>Sat, Aug 23, 1:10 PM</span>
+                    </div>
+               
+
+            </div>  
+            <div class="typing-msg">
+                   
+                    <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+                    <input class="form-control" type="text" placeholder="receiver" [(ngModel)]="Inputreceiver">
+
+                            <button class="btn btn-success" (click)="sendMessage()">Send</button>
+                           
+                    
+
+                  
+                
+                <ul class="ft-options">
+                    <li><a href="#" title=""><i class="la la-smile-o"></i></a></li>
+                    <li><a href="#" title=""><i class="la la-camera"></i></a></li>
+                    <li><a href="#" title=""><i class="fa fa-paperclip"></i></a></li>
+                </ul>
+                
+                
+
+            </div> 
+        </div>
+   
+            </div>
+
+
+
+            <div class="chatbox">
+                <div class="chat-mg">
+                    <a href="#" title=""><img src="https://i.ibb.co/TYWRDW0/person-512-3.jpg" alt=""></a>
+                    <span> </span> 
+                </div>
+                <div class="conversation-box">
+                    <div class="con-title mg-3">
+                        <div class="chat-user-info">
+                            <img src="http://via.placeholder.com/34x33" alt="">
+                            <h3>John Doe <span class="status-info"></span></h3>
+                        </div>
+                        <div class="st-icons">
+                            <a href="#" title=""><i class="la la-cog"></i></a>
+                            <a href="#" title="" class="close-chat"><i class="la la-minus-square"></i></a>
+                            <a href="#" title="" class="close-chat"><i class="la la-close"></i></a>
+                        </div>
+                    </div>
+                   
+                    <div class="chat-hist mCustomScrollbar" data-mcs-theme="dark" >
+                      
+                
+                        <div class="chat-msg st2"  *ngFor="let msg1 of messageService.msgReceived">
+                            <p>{{msg1}}</p>
+                           
+                           
+                            <span>5 minutes ago</span>
+                        </div>
+                        <div class="chat-msg"  *ngFor="let msg of messageService.msg "  >
+                        
+                            <p>  {{msg}} </p>
+                            <span>Sat, Aug 23, 1:10 PM</span>
+                            </div>
+                       
+        
+                    </div>     
+                    <div class="typing-msg">
+                           
+                            <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+                            <input class="form-control" type="text" placeholder="receiver" [(ngModel)]="Inputreceiver">
+        
+                                    <button class="btn btn-success" (click)="sendMessage()">Send</button>
+                                   
+                            
+        
+                          
+                        
+                        <ul class="ft-options">
+                            <li><a href="#" title=""><i class="la la-smile-o"></i></a></li>
+                            <li><a href="#" title=""><i class="la la-camera"></i></a></li>
+                            <li><a href="#" title=""><i class="fa fa-paperclip"></i></a></li>
+                        </ul>
+                        
+                        
+        
+                    </div> 
+                </div>
+           
+                    </div>
+        </div>
+        <div class="conversation-box">
+            <div class="con-title mg-3">
+                <div class="chat-user-info">
+                    <img src="http://via.placeholder.com/34x33" alt="">
+                    <h3>John Doe <span class="status-info"></span></h3>
+                </div>
+                <div class="st-icons">
+                    <a href="#" title=""><i class="la la-cog"></i></a>
+                    <a href="#" title="" class="close-chat"><i class="la la-minus-square"></i></a>
+                    <a href="#" title="" class="close-chat"><i class="la la-close"></i></a>
+                </div>
+            </div>
+           
+            <div class="chat-hist mCustomScrollbar" data-mcs-theme="dark" >
+                
+               
+        
+                <div class="chat-msg st2"  *ngFor="let msg1 of messageService.msgReceived">
+                    <p>{{msg1}}</p>
+                   
+                   
+                    <span>5 minutes ago</span>
+                </div>
+                <div class="chat-msg"  *ngFor="let msg of messageService.msg "  >
+                
+                    <p>  {{msg}} </p>
+                    <span>Sat, Aug 23, 1:10 PM</span>
+                    </div>
+               
+
+            </div>     
+            <div class="typing-msg">
+                   
+                    <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+                    <input class="form-control" type="text" placeholder="receiver" [(ngModel)]="Inputreceiver">
+
+                            <button class="btn btn-success" (click)="sendMessage()">Send</button>
+                           
+                    
+
+                  
+                
+                <ul class="ft-options">
+                    <li><a href="#" title=""><i class="la la-smile-o"></i></a></li>
+                    <li><a href="#" title=""><i class="la la-camera"></i></a></li>
+                    <li><a href="#" title=""><i class="fa fa-paperclip"></i></a></li>
+                </ul>
+                
+                
+
+            </div>
+        </div>
+    
+ 
+
+
+ <div class="chatbox-list">
+    <div class="conversation-box">
+        <div class="con-title mg-3">
+            <div class="chat-user-info">
+                <img src="http://via.placeholder.com/34x33" alt="">
+                <h3>John Doe <span class="status-info"></span></h3>
+            </div>
+            <div class="st-icons">
+                <a href="#" title=""><i class="la la-cog"></i></a>
+                <a href="#" title="" class="close-chat"><i class="la la-minus-square"></i></a>
+                <a href="#" title="" class="close-chat"><i class="la la-close"></i></a>
+            </div>
+        </div>
+       
+        <div class="chat-hist mCustomScrollbar" data-mcs-theme="dark" >
+            
+           
+    
+            <div class="chat-msg st2"  *ngFor="let msg1 of messageService.msgReceived">
+                <p>{{msg1}}</p>
+               
+               
+                <span>5 minutes ago</span>
+            </div>
+            <div class="chat-msg"  *ngFor="let msg of messageService.msg "  >
+            
+                <p>  {{msg}} </p>
+                <span>Sat, Aug 23, 1:10 PM</span>
+                </div>
+           
+
+        </div>   
+        <div class="typing-msg">
+               
+                <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+                <input class="form-control" type="text" placeholder="receiver" [(ngModel)]="Inputreceiver">
+
+                        <button class="btn btn-success" (click)="sendMessage()">Send</button>
+                       
+                
+
+              
+            
+            <ul class="ft-options">
+                <li><a href="#" title=""><i class="la la-smile-o"></i></a></li>
+                <li><a href="#" title=""><i class="la la-camera"></i></a></li>
+                <li><a href="#" title=""><i class="fa fa-paperclip"></i></a></li>
+            </ul>
+            
+            
+
+        </div> 
+    </div>
+    </div>
+    <div class="chatbox">
+        <div class="chat-mg">
+            <a href="#" title=""><img src="https://i.ibb.co/TYWRDW0/person-512-3.jpg" alt=""></a>
+            <span> </span> 
+        </div>
+        <div class="conversation-box">
+            <div class="con-title mg-3">
+                <div class="chat-user-info">
+                    <img src="http://via.placeholder.com/34x33" alt="">
+                    <h3>John Doe <span class="status-info"></span></h3>
+                </div>
+                <div class="st-icons">
+                    <a href="#" title=""><i class="la la-cog"></i></a>
+                    <a href="#" title="" class="close-chat"><i class="la la-minus-square"></i></a>
+                    <a href="#" title="" class="close-chat"><i class="la la-close"></i></a>
+                </div>
+            </div>
+           
+            <div class="chat-hist mCustomScrollbar" data-mcs-theme="dark" >
+                
+               
+        
+                <div class="chat-msg st2"  *ngFor="let msg1 of messageService.msgReceived">
+                    <p>{{msg1}}</p>
+                   
+                   
+                    <span>5 minutes ago</span>
+                </div>
+                <div class="chat-msg"  *ngFor="let msg of messageService.msg "  >
+                
+                    <p>  {{msg}} </p>
+                    <span>Sat, Aug 23, 1:10 PM</span>
+                    </div>
+               
+
+            </div>    
+            <div class="typing-msg">
+                   
+                    <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+                    <input class="form-control" type="text" placeholder="receiver" [(ngModel)]="Inputreceiver">
+
+                            <button class="btn btn-success" (click)="sendMessage()">Send</button>
+                           
+                    
+
+                  
+                
+                <ul class="ft-options">
+                    <li><a href="#" title=""><i class="la la-smile-o"></i></a></li>
+                    <li><a href="#" title=""><i class="la la-camera"></i></a></li>
+                    <li><a href="#" title=""><i class="fa fa-paperclip"></i></a></li>
+                </ul>
+                
+                
+
+            </div> 
+        </div>
+    </div>
+    <div class="chatbox">
+        <div class="chat-mg">
+            <a href="#" title=""><img src="https://i.ibb.co/TYWRDW0/person-512-3.jpg" alt=""></a>
+            <span> </span> 
+        </div>
+        <div class="conversation-box">
+            <div class="con-title mg-3">
+                <div class="chat-user-info">
+                    <img src="http://via.placeholder.com/34x33" alt="">
+                    <h3>John Doe <span class="status-info"></span></h3>
+                </div>
+                <div class="st-icons">
+                    <a href="#" title=""><i class="la la-cog"></i></a>
+                    <a href="#" title="" class="close-chat"><i class="la la-minus-square"></i></a>
+                    <a href="#" title="" class="close-chat"><i class="la la-close"></i></a>
+                </div>
+            </div>
+           
+            <div class="chat-hist mCustomScrollbar" data-mcs-theme="dark" >
+                
+            
+        
+                <div class="chat-msg st2"  *ngFor="let msg1 of messageService.msgReceived">
+                    <p>{{msg1}}</p>
+                   
+                   
+                    <span>5 minutes ago</span>
+                </div>
+                <div class="chat-msg"  *ngFor="let msg of messageService.msg "  >
+                
+                    <p>  {{msg}} </p>
+                    <span>Sat, Aug 23, 1:10 PM</span>
+                    </div>
+               
+
+            </div>    
+            <div class="typing-msg">
+                   
+                    <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+                    <input class="form-control" type="text" placeholder="receiver" [(ngModel)]="Inputreceiver">
+
+                            <button class="btn btn-success" (click)="sendMessage()">Send</button>
+                           
+                    
+
+                  
+                
+                <ul class="ft-options">
+                    <li><a href="#" title=""><i class="la la-smile-o"></i></a></li>
+                    <li><a href="#" title=""><i class="la la-camera"></i></a></li>
+                    <li><a href="#" title=""><i class="fa fa-paperclip"></i></a></li>
+                </ul>
+                
+                
+
+            </div>
+        </div>
+    </div>
+---->
+<div class="chatbox-list" >
+    <div class="chatbox" >
         <div class="chat-mg">
             <a href="#" title=""><img src="https://i.ibb.co/TYWRDW0/person-512-3.jpg" alt=""></a>
             <span>2</span>
@@ -8,7 +359,7 @@
             <div class="con-title mg-3">
                 <div class="chat-user-info">
                     <img src="http://via.placeholder.com/34x33" alt="">
-                    <h3>John Doe <span class="status-info"></span></h3>
+                    <h3>Najla123<span class="status-info"></span></h3>
                 </div>
                 <div class="st-icons">
                     <a href="#" title=""><i class="la la-cog"></i></a>
@@ -17,27 +368,26 @@
                 </div>
             </div>
             <div class="chat-hist mCustomScrollbar" data-mcs-theme="dark">
-                <div class="chat-msg">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.</p>
+                <div class="chat-msg"  *ngFor="let msg of messageService.msg">
+                    <p>{{msg}}</p>
                     <span>Sat, Aug 23, 1:10 PM</span>
                 </div>
                 <div class="date-nd">
                     <span>Sunday, August 24</span>
                 </div>
-                <div class="chat-msg st2">
-                    <p>Cras ultricies ligula.</p>
+                <div class="chat-msg st2"   *ngFor="let msg1 of messageService.msgReceived" >
+                    <p>{{msg1}}</p>
                     <span>5 minutes ago</span>
                 </div>
-                <div class="chat-msg">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.</p>
-                    <span>Sat, Aug 23, 1:10 PM</span>
-                </div>
+             
             </div><!--chat-list end-->
             <div class="typing-msg">
-                <form>
-                    <textarea placeholder="Type a message here"></textarea>
-                    <button type="submit"><i class="fa fa-send"></i></button>
-                </form>
+                
+                    <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+                <input class="form-control" type="text" placeholder="receiver" [(ngModel)]="Inputreceiver">
+
+                        <button class="btn btn-success" (click)="sendMessage()">Send</button>
+                
                 <ul class="ft-options">
                     <li><a href="#" title=""><i class="la la-smile-o"></i></a></li>
                     <li><a href="#" title=""><i class="la la-camera"></i></a></li>
@@ -46,15 +396,17 @@
             </div><!--typing-msg end-->
         </div><!--chat-history end-->
     </div>
-    <div class="chatbox">
+    
+    <div class="chatbox" >
         <div class="chat-mg">
             <a href="#" title=""><img src="https://i.ibb.co/TYWRDW0/person-512-3.jpg" alt=""></a>
+            <span>2</span>
         </div>
-        <div class="conversation-box">
+        <div class="conversation-box" >
             <div class="con-title mg-3">
                 <div class="chat-user-info">
                     <img src="http://via.placeholder.com/34x33" alt="">
-                    <h3>John Doe <span class="status-info"></span></h3>
+                    <h3>Subssssscriber<span class="status-info"></span></h3>
                 </div>
                 <div class="st-icons">
                     <a href="#" title=""><i class="la la-cog"></i></a>
@@ -63,27 +415,27 @@
                 </div>
             </div>
             <div class="chat-hist mCustomScrollbar" data-mcs-theme="dark">
-                <div class="chat-msg">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.</p>
+               
+                <div class="chat-msg" *ngFor="let msg of messageService.msg">
+                    <p>{{msg}}</p>
                     <span>Sat, Aug 23, 1:10 PM</span>
                 </div>
                 <div class="date-nd">
                     <span>Sunday, August 24</span>
                 </div>
-                <div class="chat-msg st2">
-                    <p>Cras ultricies ligula.</p>
+                <div class="chat-msg st2"   *ngFor="let msg1 of messageService.msgReceived" >
+                    <p>{{msg1}}</p>
                     <span>5 minutes ago</span>
                 </div>
-                <div class="chat-msg">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.</p>
-                    <span>Sat, Aug 23, 1:10 PM</span>
-                </div>
+             
             </div><!--chat-list end-->
             <div class="typing-msg">
-                <form>
-                    <textarea placeholder="Type a message here"></textarea>
-                    <button type="submit"><i class="fa fa-send"></i></button>
-                </form>
+                
+                    <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+                <input class="form-control" type="text" placeholder="receiver" [(ngModel)]="Inputreceiver">
+
+                        <button class="btn btn-success" (click)="sendMessage()">Send</button>
+                
                 <ul class="ft-options">
                     <li><a href="#" title=""><i class="la la-smile-o"></i></a></li>
                     <li><a href="#" title=""><i class="la la-camera"></i></a></li>
@@ -92,6 +444,8 @@
             </div><!--typing-msg end-->
         </div><!--chat-history end-->
     </div>
+     
+    
     <div class="chatbox">
         <div class="chat-mg bx">
             <a href="#" title=""><img src="assets/images/chat.png" alt=""></a>
@@ -99,49 +453,79 @@
         </div>
         <div class="conversation-box">
             <div class="con-title">
-                <h3>Messages</h3>
+                <h3>Messages  </h3>
+              
+               
                 <a href="#" title="" class="close-chat"><i class="la la-minus-square"></i></a>
+                
+                <a href="#" title="" data-toggle="modal" data-target="#loginModal"> <i class="la la-plus-square"></i> </a>
+                
+
+                
             </div>
             <div class="chat-list">
-                <div class="conv-list active">
+                <div class="conv-list active" *ngFor="let c of conversations">
                     <div class="usrr-pic">
                         <img src="http://via.placeholder.com/50x50" alt="">
                         <span class="active-status activee"></span>
                     </div>
                     <div class="usy-info">
-                        <h3>John Doe</h3>
-                        <span>Lorem ipsum dolor <img src="assets/images/smley.png" alt=""></span>
+                        <h3> hi </h3>
+                      
+                       
+
+                        <span>hey <img src="assets/images/smley.png" alt="" ></span>
+                       
                     </div>
                     <div class="ct-time">
                         <span>1:55 PM</span>
                     </div>
-                    <span class="msg-numbers">2</span>
+                   <button class="btn btn-success" (click)="openChat()">Voir</button>
+                   
                 </div>
-                <div class="conv-list">
-                    <div class="usrr-pic">
-                        <img src="http://via.placeholder.com/50x50" alt="">
-                    </div>
-                    <div class="usy-info">
-                        <h3>John Doe</h3>
-                        <span>Lorem ipsum dolor <img src="assets/images/smley.png" alt=""></span>
-                    </div>
-                    <div class="ct-time">
-                        <span>11:39 PM</span>
-                    </div>
-                </div>
-                <div class="conv-list">
-                    <div class="usrr-pic">
-                        <img src="http://via.placeholder.com/50x50" alt="">
-                    </div>
-                    <div class="usy-info">
-                        <h3>John Doe</h3>
-                        <span>Lorem ipsum dolor <img src="assets/images/smley.png" alt=""></span>
-                    </div>
-                    <div class="ct-time">
-                        <span>0.28 AM</span>
-                    </div>
-                </div>
+               
             </div><!--chat-list end-->
+
         </div><!--conversation-box end-->
     </div>
 </div><!--chatbox-list end-->
+
+<div id="show">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-title text-center">
+            <h4>Nouveau Message </h4>
+          </div>
+          <div class="d-flex flex-column text-center">
+            
+              
+                <input type="text" class="form-control" id="email1"placeholder="Nom d'utilisateur" [(ngModel)]="ChatRecev">
+              
+             
+                <input type="text" class="form-control" id="password1" placeholder="Message" [(ngModel)]="contenu" >
+              
+                <button type="button" class="btn btn-info btn-block btn-round" (click)="saveChat()" >Envoyer</button>
+        
+            
+        
+            
+          </div>
+        </div>
+      </div>
+       
+    </div>
+    <button mat-raised-button (click)="oncreate()">
+        add 
+    </button>
+
+  </div>
+   
+  </div>
+  

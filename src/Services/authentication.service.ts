@@ -12,7 +12,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 @Injectable()
 
 export class AuthenticationService{
-    private host:string="http://localhost:8080";
+    private host:string="http://localhost:8081";
     private jwtToken ;
     private message  ;
     public postes;
@@ -152,9 +152,17 @@ export class AuthenticationService{
               .set('contenu',contenu)
               .set('username',username)
               .set('idPoste',idPoste)
-
+          
           return this.http.get(this.host+"/commenterPoste",{params: params} );
         
+      }
+
+      getConversations(username)
+      {
+        let params = new HttpParams()
+              .set('username',username)
+          
+          return this.http.get(this.host+"/getConversations",{params: params} );
       }
 
 

@@ -30,7 +30,7 @@
                 <h3>Sections</h3>
             </div><!--sd-title end-->
             <div class="suggestions-list">
-                <button (click)="changeSection(s.sectionName);" style="border-bottom: 0.5px solid gray; cursor: pointer;" class="suggestion-usd btn btn-outline-danger" *ngFor="let s of sections._embedded.sections">
+                <button (click)="changeSection(s.sectionName);" style="border-bottom: 0.5px solid gray; cursor: pointer;" class="suggestion-usd btn btn-outline-danger" *ngFor="let s of sections?._embedded.sections">
                     <img src="https://i.ibb.co/d6x5sVG/white-hashtag-red-circle-concept-social-media-micro-blogging-pr-popularity-blogger-grille-grid-isola.jpg" alt="">
                     <div class="sgt-text">
                         <h4>{{s.sectionName}}</h4>

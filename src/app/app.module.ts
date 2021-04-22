@@ -22,6 +22,10 @@ import { MonProfilComponent } from './mon-profil/mon-profil.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
+import { MessageService } from 'src/Services/Message.service';
+import { ChatBoxComponent } from './chat-box/chat-box.component';
+import { AdDirectiveComponent } from './ad-directive/ad-directive.component';
+
 
 
 @NgModule({
@@ -41,6 +45,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     RightBarComponent,
     ChatComponent,
     MonProfilComponent,
+    ChatBoxComponent,
+    AdDirectiveComponent,
+    
   ],
   imports: [
     FormsModule ,
@@ -51,7 +58,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     InfiniteScrollModule,
     NgxSpinnerModule
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService , MessageService] , 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,7 @@ import { MonProfilComponent } from './mon-profil/mon-profil.component';
 import { DeconnexionComponent } from './deconnexion/deconnexion.component';
 
 
+
 const appRoutes:Routes= [
   { path:"inscription",component: InscriptionComponent } ,
    { path:"Connexion",component: ConnexionComponent } ,
@@ -18,6 +19,7 @@ const appRoutes:Routes= [
     { path:"accueil",component: ContainerComponent } ,
     { path:"profil",component: MonProfilComponent } ,
     { path : "logout" , component : DeconnexionComponent }, 
+   
     { path:"",
     redirectTo: "/Connexion",
     pathMatch:'full'
