@@ -29,12 +29,12 @@ constructor( private http:HttpClient ) {
   public msgMap =  new Map() ; 
   public sender ; 
   public receiver1 ; 
-  public static M =0 ; 
+  public static M = 0 ; 
 
  
-  private host:string="http://localhost:8081";
+  private host:string="http://localhost:8080";
   initializeWebSocketConnection() {
-    const serverUrl = 'http://localhost:8081/socket';
+    const serverUrl = 'http://localhost:8080/socket';
     
     const ws = new SockJS(serverUrl);
     ws.withCredentials=true ; 
@@ -54,7 +54,7 @@ constructor( private http:HttpClient ) {
           //that.msg.push(message.body);
           console.log(that.indexValue) ; 
           //that.msg.push(that.indexValue);
-          that.msg.push("hi");
+          that.msg.push(that.indexValue);
           console.log(that.msg) ; 
 
          
@@ -162,14 +162,14 @@ constructor( private http:HttpClient ) {
       console.log(params) ; 
 
       console.log("im here also ") ; 
-      return this.http.get("http://localhost:8081/saveChat",{params: params} ) ; 
+      return this.http.get("http://localhost:8080/saveChat",{params: params} ) ; 
      
     }
     getChat(emetteur)
     {
       let params = new HttpParams()
       .set('emetteur',emetteur) ; 
-      return this.http.get("http://localhost:8081/getChat",{params:params}) ; 
+      return this.http.get("http://localhost:8080/getChat",{params:params}) ; 
     }     
 
   }

@@ -31,6 +31,8 @@ public Inputreceiver ;
   public myUser;
   public jwtToken;
   public roles;
+  public username;
+  public receiver;
 
 
 
@@ -38,24 +40,21 @@ constructor(public  messageService: MessageService , private authService : Authe
 }
 
 ngOnInit(): void {
-  console.log("salaaaaam")
-  ChatComponent.MeConnected = this.authService.getUser().username ;
+  //ChatComponent.MeConnected = this.authService.getUser().username ;
   this.emetteur=this.authService.getUser().username ;  
 
- /*this.messageService.getChat(this.emetteur).subscribe(data=> {
-   this.cont = data ; 
-   console.log(data) ; 
- })*/
- //this.myUser = this.getUser();
  //Conversations
+ console.log("im here")
  this.authService.getConversations(this.emetteur).subscribe(data=>{
    this.conversations = data;
-   console.log("d " +this.conversations)
- },
-  err=>{
+   console.log("conversations "+this.conversations)
+   //console.log("imad "+this.conversations[0].users[1].username != this.authService.getUser().username)
+ },err=>{
     console.log("eee"+err)
   })
  
+  
+
 }
 
 sendMessage() {
@@ -102,10 +101,12 @@ sendMessage() {
 
 
   }
-  openChat()
+  openChat(users)
   {
-    console.log(this.recep) ; 
-    console.log(this.con) ; 
+    users.forEach(u => {
+      if(u.username != this.emetteur)
+        this.receiver = u.username;
+    });
   }
   oncreate()
   {
