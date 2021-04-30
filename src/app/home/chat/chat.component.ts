@@ -22,6 +22,7 @@ public Inputreceiver ;
   public  static MeConnected  ; 
   public  static receiver  ; 
   public ChatRecev ; 
+  public show = false;
   public contenu ; 
   public emetteur ; 
   public cont ; 
@@ -107,6 +108,11 @@ sendMessage() {
       if(u.username != this.emetteur)
         this.receiver = u.username;
     });
+
+    this.show = true;
+
+    this.messageService.setMessagesAffiches(this.messageService.Msgs.get(this.receiver))
+    console.log("open "+this.messageService.Msgs.get(this.receiver))
   }
   oncreate()
   {

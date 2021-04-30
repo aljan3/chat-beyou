@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs';
 // Declare SockJS and Stomp
 declare var SockJS;
 declare var Stomp;
@@ -21,6 +22,7 @@ constructor( private http:HttpClient ) {
 
   }
   public stompClient;
+  public Msgs = new Map<string, string[]>();
   public msg: any[]=[];
   public msgReceived: any[]=[];
   public username ; 
@@ -30,9 +32,11 @@ constructor( private http:HttpClient ) {
   public sender ; 
   public receiver1 ; 
   public static M = 0 ; 
+  public messagesAffiches;
 
- 
+  messagesAffichesChangeEvent: Subject<string> = new Subject<string>();
   private host:string="http://localhost:8080";
+  
   initializeWebSocketConnection() {
     const serverUrl = 'http://localhost:8080/socket';
     
@@ -43,7 +47,6 @@ constructor( private http:HttpClient ) {
     // tslint:disable-next-line:only-arrow-functions
     this.stompClient.connect({}, function(frame) {
       that.stompClient.subscribe('/message',(Packet) => {
-        console.log("ded" + that.index)
         if (ChatComponent.Me==1 ) 
         {
              that.index =  Packet.body.indexOf("*654648*");
@@ -54,8 +57,17 @@ constructor( private http:HttpClient ) {
           //that.msg.push(message.body);
           console.log(that.indexValue) ; 
           //that.msg.push(that.indexValue);
-          that.msg.push(that.indexValue);
-          console.log(that.msg) ; 
+          //that.msg.push(that.indexValue);
+          console.log(that.receiver1)
+          let messages : string[] = []; 
+          if(that.Msgs.get(that.receiver1) != undefined)
+              messages = that.Msgs.get(that.receiver1)!;
+          
+          messages?.push(that.indexValue);
+          console.log(messages)
+            that.Msgs.set(that.receiver1,messages);
+            that.messagesAffiches = that.Msgs.get(that.receiver1)!;
+          console.log(that.Msgs) ; 
 
          
 
@@ -72,7 +84,7 @@ constructor( private http:HttpClient ) {
             that.indexValue=Packet.body.substring(0, that.index) ; 
             console.log(that.indexValue) ; 
             //that.msgReceived.push(message.body) ;
-            that.msgReceived.push("hey")
+            that.msgReceived.push(that.indexValue)
             //that.msgReceived.push(that.indexValue)
             
           }
@@ -150,6 +162,13 @@ constructor( private http:HttpClient ) {
    // console.log(this.msgMap) ; 
    
   }
+
+  setMessagesAffiches(messagesAffiches)
+  {
+    this.messagesAffiches = messagesAffiches;
+    this.messagesAffichesChangeEvent.next(this.messagesAffiches);
+  }
+
     saveChat(emetteur,recepteur,contenu)
     {
       console.log("recepteur "+recepteur) ; 

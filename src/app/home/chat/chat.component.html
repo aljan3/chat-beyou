@@ -351,7 +351,7 @@
 ---->
 <div class="chatbox-list" >
     
-    <app-chat-box [receiver]=receiver></app-chat-box>
+    <app-chat-box [receiver]=receiver [show]=show></app-chat-box>
      
     
     <div class="chatbox">
@@ -373,22 +373,22 @@
             </div>
             <div class="chat-list">
                 <div class="conv-list active"   *ngFor="let c of conversations" >
-                        <div class="usrr-pic" *ngIf="c.users[0].username != emetteur "> 
+                        <div class="usrr-pic" > 
                             <img src="http://via.placeholder.com/50x50" alt="">
                             <span class="active-status activee"></span>
                         </div>
-                        <div class="usy-info" *ngIf="c.users[0].username != emetteur ">
-                            <h3 >  {{c.users[0].username}} </h3>
-                          
+                        <div class="usy-info">
+                            <h3  *ngIf="c.users[0].username != emetteur ">  {{c.users[0].username}} </h3>
+                            <h3  *ngIf="c.users[1].username != emetteur ">  {{c.users[1].username}} </h3>
                            
     
                             <span>hey <img src="assets/images/smley.png" alt="" ></span>
                            
                         </div>
-                        <div class="ct-time" *ngIf="c.users[0].username != emetteur ">
+                        <div class="ct-time" >
                             <span>1:55 PM</span>
                         </div>
-                       <button *ngIf="c.users[0].username != emetteur " class="btn btn-success" (click)="openChat(c.users)">Send</button>
+                       <button  class="btn btn-success" (click)="openChat(c.users)">Send</button>
                     
                    
                 </div>
